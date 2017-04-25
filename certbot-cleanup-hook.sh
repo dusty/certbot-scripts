@@ -9,8 +9,7 @@ if [ -z "$CERTBOT_VALIDATION" ] || [ -z "$CERTBOT_TOKEN" ];then
   exit 1
 fi
 
-# SAVE CERTBOT TOKEN
+# REMOVE CHALLENGE
 for host in ${CERTBOT_HOSTS[@]}; do
-  ssh $host "rm -f $CERTBOT_PATH/$CERTBOT_TOKEN && /usr/local/nginx/sbin/nginx -s reload" 
+  ssh $host "rm -f $CERTBOT_CHALLENGE_PATH/$CERTBOT_TOKEN" 
 done
-
