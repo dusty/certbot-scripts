@@ -1,7 +1,6 @@
 #!/bin/bash
 
 RESTART_CMD="/usr/local/nginx/sbin/nginx -s reload"
-#RESTART_CMD="/usr/local/nginx/sbin/nginx -h"
 
 # GET PARAMS
 source _env.sh
